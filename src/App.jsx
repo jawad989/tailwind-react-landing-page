@@ -1,11 +1,16 @@
+import { useState } from "react"
 import "./App.css"
 import FooterLink from "./components/FooterLink"
 import ListItem from "./components/ListItem"
 import NavLink from "./components/NavLink"
 import SocialLink from "./components/SocialLink"
 import Testimonial from "./components/Testimonial"
+import { avatarAli, avatarAnisha, avatarRichard } from "./assets/constants"
+import { iconFb, iconInstagram, iconPinterest, iconTwitter, iconYt } from './assets/constants.js'
 
 function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
   return (
     <>
       {/* Navbar */}
@@ -31,7 +36,38 @@ function App() {
           >
             Get Started
           </a>
+
+          {/* Hamburger Button */}
+          <button
+            id='menu-btn'
+            className={`${
+              isMobileMenuOpen && "open"
+            } block hamburger md:hidden focus:outline-none`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span className='hamburger-top'></span>
+            <span className='hamburger-middle'></span>
+            <span className='hamburger-bottom'></span>
+          </button>
         </div>
+
+        {isMobileMenuOpen && (
+          <div className='md:hidden'>
+            {/* Mobile Menu */}
+            <div
+              id='menu'
+              className={`${
+                isMobileMenuOpen && "flex"
+              } absolute flex-col items-center self-end md:hidden py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md`}
+            >
+              <a href='#'>Pricing</a>
+              <a href='#'>Product</a>
+              <a href='#'>About Us</a>
+              <a href='#'>Careers</a>
+              <a href='#'>Community</a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -111,6 +147,7 @@ function App() {
         </div>
       </section>
 
+      {/* Testimonials */}
       <section id='testimonials'>
         <div className='max-w-6xl px-5 mx-auto mt-32 text-center'>
           <h2 className='text-4xl font-bold text-center'>
@@ -119,35 +156,27 @@ function App() {
 
           {/* Testimonials Containers */}
           <div className='flex flex-col mt-24 md:flex-row md:space-x-6'>
-            <div className='flex flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:w-1/3'>
-              <Testimonial
-                name='Anisha Li'
-                avatarPath='img/avatar-anisha.png'
-                paragraph='“Manage has supercharged our team’s workflow. The ability to
+            <Testimonial
+              name='Anisha Li'
+              avatarPath={avatarAnisha}
+              paragraph='“Manage has supercharged our team’s workflow. The ability to
                             maintain visibility on larger milestones at all times keeps
                             everyone motivated.”'
-              />
-            </div>
-
-            <div className='hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3'>
-              <Testimonial
-                name='Ali Bravo'
-                avatarPath='img/avatar-ali.png'
-                paragraph='“We have been able to cancel so many other subscriptions since
+            />
+            <Testimonial
+              name='Ali Bravo'
+              avatarPath={avatarAli}
+              paragraph='“We have been able to cancel so many other subscriptions since
                             using Manage. There is no more cross-channel confusion and
                             everyone is much more focused.”'
-              />
-            </div>
-
-            <div className='hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3'>
-              <Testimonial
-                name='Richard Watts'
-                avatarPath='img/avatar-richard.png'
-                paragraph='“Manage has supercharged our team’s workflow. The ability to
+            />
+            <Testimonial
+              name='Richard Watts'
+              avatarPath={avatarRichard}
+              paragraph='“Manage has supercharged our team’s workflow. The ability to
                             maintain visibility on larger milestones at all times keeps
                             everyone motivated.”'
-              />
-            </div>
+            />
           </div>
 
           {/* Button */}
@@ -195,19 +224,19 @@ function App() {
             {/* Social Links Container */}
             <div className='flex justify-center space-x-4'>
               <a href='#'>
-                <SocialLink profileAvatar='img/icon-facebook.svg' />
+                <SocialLink profileAvatar={iconFb} />
               </a>
               <a href='#'>
-                <SocialLink profileAvatar='img/icon-youtube.svg' />
+                <SocialLink profileAvatar={iconYt} />
               </a>
               <a href='#'>
-                <SocialLink profileAvatar='img/icon-twitter.svg' />
+                <SocialLink profileAvatar={iconTwitter} />
               </a>
               <a href='#'>
-                <SocialLink profileAvatar='img/icon-pinterest.svg' />
+                <SocialLink profileAvatar={iconPinterest} />
               </a>
               <a href='#'>
-                <SocialLink profileAvatar='img/icon-instagram.svg' />
+                <SocialLink profileAvatar={iconInstagram} />
               </a>
             </div>
           </div>
