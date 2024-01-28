@@ -1,6 +1,9 @@
 import "./App.css"
+import FooterLink from "./components/FooterLink"
 import ListItem from "./components/ListItem"
 import NavLink from "./components/NavLink"
+import SocialLink from "./components/SocialLink"
+import Testimonial from "./components/Testimonial"
 
 function App() {
   return (
@@ -15,11 +18,11 @@ function App() {
           </div>
 
           <div className='hidden md:flex space-x-6'>
-            <NavLink linkLabel="Pricing"/>
-            <NavLink linkLabel="Product"/>
-            <NavLink linkLabel="About Us"/>
-            <NavLink linkLabel="Careers"/>
-            <NavLink linkLabel="Community"/>
+            <NavLink linkLabel='Pricing' />
+            <NavLink linkLabel='Product' />
+            <NavLink linkLabel='About Us' />
+            <NavLink linkLabel='Careers' />
+            <NavLink linkLabel='Community' />
           </div>
 
           <a
@@ -107,6 +110,143 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section id='testimonials'>
+        <div className='max-w-6xl px-5 mx-auto mt-32 text-center'>
+          <h2 className='text-4xl font-bold text-center'>
+            What's Different About Manage?
+          </h2>
+
+          {/* Testimonials Containers */}
+          <div className='flex flex-col mt-24 md:flex-row md:space-x-6'>
+            <div className='flex flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:w-1/3'>
+              <Testimonial
+                name='Anisha Li'
+                avatarPath='img/avatar-anisha.png'
+                paragraph='“Manage has supercharged our team’s workflow. The ability to
+                            maintain visibility on larger milestones at all times keeps
+                            everyone motivated.”'
+              />
+            </div>
+
+            <div className='hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3'>
+              <Testimonial
+                name='Ali Bravo'
+                avatarPath='img/avatar-ali.png'
+                paragraph='“We have been able to cancel so many other subscriptions since
+                            using Manage. There is no more cross-channel confusion and
+                            everyone is much more focused.”'
+              />
+            </div>
+
+            <div className='hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3'>
+              <Testimonial
+                name='Richard Watts'
+                avatarPath='img/avatar-richard.png'
+                paragraph='“Manage has supercharged our team’s workflow. The ability to
+                            maintain visibility on larger milestones at all times keeps
+                            everyone motivated.”'
+              />
+            </div>
+          </div>
+
+          {/* Button */}
+          <div className='my-16'>
+            <a
+              href='#'
+              className='p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight'
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section id='cta' className='bg-brightRed'>
+        <div className='container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0'>
+          <h2 className='text-5xl font-bold leading-tight text-center text-white md:text-4xl md:max-w-xl md:text-left'>
+            Simplify how your team works today
+          </h2>
+          <div>
+            <a
+              href='#'
+              className='p-3 px-6 pt-2 text-brightRed bg-white shadow-2xl rounded-full baseline hover:bg-gray-300'
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className='bg-veryDarkBlue'>
+        {/* Flex Container */}
+        <div className='container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0'>
+          {/* Logo and socials */}
+          <div className='flex flex-col-reverse items-center justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0'>
+            <div className='mx-auto my-6 text-center md:hidden text-white'>
+              Copyright &copy; 2022, All Rights Reserved
+            </div>
+            {/* Logo */}
+            <div>
+              <img src='img/logo-white.svg' className='h-8' alt='' />
+            </div>
+            {/* Social Links */}
+            <div className='flex justify-center space-x-4'>
+              <a href='#'>
+                <SocialLink profileAvatar='img/icon-facebook.svg' />
+              </a>
+              <a href='#'>
+                <SocialLink profileAvatar='img/icon-youtube.svg' />
+              </a>
+              <a href='#'>
+                <SocialLink profileAvatar='img/icon-twitter.svg' />
+              </a>
+              <a href='#'>
+                <SocialLink profileAvatar='img/icon-pinterest.svg' />
+              </a>
+              <a href='#'>
+                <SocialLink profileAvatar='img/icon-instagram.svg' />
+              </a>
+            </div>
+          </div>
+          {/* List Container */}
+          <div className='flex justify-around space-x-32'>
+            <div className='flex flex-col space-y-3 text-white'>
+              <FooterLink linkLabel="Home" />
+              <FooterLink linkLabel="Pricing" />
+              <FooterLink linkLabel="Products" />
+              <FooterLink linkLabel="About Us" />
+            </div>
+            <div className='flex flex-col space-y-3 text-white'>
+              <FooterLink linkLabel="Carrers" />
+              <FooterLink linkLabel="Community" />
+              <FooterLink linkLabel="Privacy Policy" />
+            </div>
+          </div>
+
+          {/* Input Container */}
+          <div className='flex flex-col justify-between'>
+            <form>
+              <div className='flex space-x-3'>
+                <input
+                  type='text'
+                  className='flex-1 px-4 rounded-full focus:outline-none'
+                  placeholder='updates in your inbox'
+                />
+                <button className='px-6 py-2 text-white rounded-full bg-brightRed hover:bg-brightRedLight focus:outline-none'>
+                  Go
+                </button>
+              </div>
+            </form>
+
+            <div className='hidden text-white md:block'>
+              Copyright &copy; 2022, All Rights Reserved
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   )
 }
