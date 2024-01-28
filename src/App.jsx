@@ -5,8 +5,6 @@ import ListItem from "./components/ListItem"
 import NavLink from "./components/NavLink"
 import SocialLink from "./components/SocialLink"
 import Testimonial from "./components/Testimonial"
-import { avatarAli, avatarAnisha, avatarRichard } from "./assets/constants"
-import { iconFb, iconInstagram, iconPinterest, iconTwitter, iconYt } from './assets/constants.js'
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -19,7 +17,7 @@ function App() {
         <div className='flex items-center justify-between'>
           {/* Logo */}
           <div className='pt-2'>
-            <img src='img/logo.svg' alt='' />
+            <img src='images/logo.svg' alt='' />
           </div>
 
           <div className='hidden md:flex space-x-6'>
@@ -94,7 +92,7 @@ function App() {
           </div>
           {/* Image */}
           <div className='md:w-1/2'>
-            <img src='img/illustration-intro.svg' alt='' />
+            <img src="images/illustration-intro.svg" alt='' />
           </div>
         </div>
       </section>
@@ -158,21 +156,21 @@ function App() {
           <div className='flex flex-col mt-24 md:flex-row md:space-x-6'>
             <Testimonial
               name='Anisha Li'
-              avatarPath={avatarAnisha}
+              avatarPath="images/avatar-anisha.png"
               paragraph='“Manage has supercharged our team’s workflow. The ability to
                             maintain visibility on larger milestones at all times keeps
                             everyone motivated.”'
             />
             <Testimonial
               name='Ali Bravo'
-              avatarPath={avatarAli}
+              avatarPath="images/avatar-ali.png"
               paragraph='“We have been able to cancel so many other subscriptions since
                             using Manage. There is no more cross-channel confusion and
                             everyone is much more focused.”'
             />
             <Testimonial
               name='Richard Watts'
-              avatarPath={avatarRichard}
+              avatarPath="images/avatar-richards.png"
               paragraph='“Manage has supercharged our team’s workflow. The ability to
                             maintain visibility on larger milestones at all times keeps
                             everyone motivated.”'
@@ -219,24 +217,24 @@ function App() {
             </div>
             {/* Logo */}
             <div>
-              <img src='img/logo-white.svg' className='h-8' alt='' />
+              <img src="images/logo-white.svg" className='h-8' alt='' />
             </div>
             {/* Social Links Container */}
             <div className='flex justify-center space-x-4'>
               <a href='#'>
-                <SocialLink profileAvatar={iconFb} />
+                <SocialLink profileAvatar="images/icon-facebook.svg" />
               </a>
               <a href='#'>
-                <SocialLink profileAvatar={iconYt} />
+                <SocialLink profileAvatar="images/icon-youtube.svg" />
               </a>
               <a href='#'>
-                <SocialLink profileAvatar={iconTwitter} />
+                <SocialLink profileAvatar="images/icon-twitter.svg" />
               </a>
               <a href='#'>
-                <SocialLink profileAvatar={iconPinterest} />
+                <SocialLink profileAvatar="images/icon-pinterest.svg" />
               </a>
               <a href='#'>
-                <SocialLink profileAvatar={iconInstagram} />
+                <SocialLink profileAvatar="images/icon-instagram.svg" />
               </a>
             </div>
           </div>
